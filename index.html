@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASTRA — Shirjan Baral</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<canvas id="bg-canvas"></canvas>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">ASTRA<span class="dot">.</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Work</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-status"><div class="status-dot"></div>Open to opportunities</div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-tag">CS Student & Full-Stack Developer</div>
+    <h1 class="hero-name">
+      Shirjan<br>
+      <span class="stroke">Baral<span style="color:var(--accent)">.</span></span>
+    </h1>
+    <p class="hero-desc">
+      CS Student & self-taught developer from Nepal — I build full-stack web apps 
+      with React, Node.js, Python/Django and love turning complex ideas into clean, 
+      beautiful interfaces.
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn-primary">View My Work</a>
+      <a href="#contact" class="btn-outline">Get In Touch</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">3<span>+</span></div>
+        <div class="stat-label">Years Building</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">15<span>+</span></div>
+        <div class="stat-label">Projects Shipped</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">5<span>+</span></div>
+        <div class="stat-label">Tech Stacks</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <canvas id="hero-canvas"></canvas>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div>
+    <div class="section-label reveal">01 — About Me</div>
+    <h2 class="section-title reveal">CS Student<br>&amp; Full-Stack<br><span style="color:var(--accent)">Developer</span></h2>
+    <p class="about-bio reveal">
+      Hey! I'm <strong>Shrijan Baral</strong> — a Computer Science student and self-taught developer 
+      based in <strong>Chitwan, Nepal</strong>. I'm passionate about building things for the web, 
+      from clean REST APIs to pixel-perfect UIs.
+    </p>
+    <p class="about-bio reveal">
+      I work across the full stack — React &amp; Next.js on the frontend, Node.js/Express and 
+      Python/Django on the backend, with MongoDB and PostgreSQL for data. I also care deeply about 
+      design, and use Figma to prototype before I code.
+    </p>
+    <p class="about-bio reveal">
+      When I'm not studying or coding, I'm hiking Himalayan trails, experimenting with 3D in 
+      the browser, or contributing to open source.
+    </p>
+
+    <div class="about-highlights reveal">
+      <div class="highlight-item">
+        <div class="hl-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="hl-title">BSc. Computer Science</div>
+        <div class="hl-sub">Studying in Tribhuvan University, Nepal</div>
+      </div>
+      <div class="highlight-item">
+        <div class="hl-icon"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="hl-title">Chitwan, Nepal</div>
+        <div class="hl-sub">Open to Remote Work</div> <var> char assign the value you want to </var></div>
+      </div>
+      <div class="highlight-item">
+        <div class="hl-icon"><i class="fa-solid fa-lightbulb"></i></div>
+        <div class="hl-title">Self-Taught Dev</div>
+        <div class="hl-sub">Building since 2022</div>
+      </div>
+      <div class="highlight-item">
+        <div class="hl-icon"><i class="fa-solid fa-globe"></i></div>
+        <div class="hl-title">Full-Stack Focus</div>
+        <div class="hl-sub">Frontend + Backend + Design</div>
+      </div>
+    </div>
+
+    <div class="skills-section reveal">
+      <h4>// Frontend</h4>
+      <div class="skills-row">
+        <span class="skill-tag">React.js</span>
+        <span class="skill-tag">Next.js</span>
+        <span class="skill-tag">TypeScript</span>
+        <span class="skill-tag">Tailwind CSS</span>
+        <span class="skill-tag">Three.js</span> <main> assign welcome to Querie</main> <script src="my_image.jpg"></script>
+      </div>
+      <h4>// Backend</h4>
+      <div class="skills-row">
+        <span class="skill-tag alt">Node.js</span>
+        <span class="skill-tag alt">Express.js</span>
+        <span class="skill-tag alt">Python</span>
+        <span class="skill-tag alt">Django</span>
+        <span class="skill-tag alt">REST APIs</span>
+      </div>
+      <h4>// Data &amp; Design</h4>
+      <div class="skills-row">
+        <span class="skill-tag alt2">MongoDB</span>
+        <span class="skill-tag alt2">PostgreSQL</span>
+        <span class="skill-tag alt2">Figma</span>
+        <span class="skill-tag alt2">Git / GitHub</span>
+        <span class="skill-tag alt2">Vercel</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-right">
+    <canvas id="about-3d"></canvas>
+    <div class="about-card reveal">
+      <div class="card-year">2024 — PRESENT</div>
+      <div class="card-title">Freelance Developer</div>
+      <div class="card-sub">Remote · Building full-stack web apps for clients — React frontends, Django &amp; Node backends</div>
+    </div>
+    <div class="about-card reveal">
+      <div class="card-year">2023 — PRESENT</div>
+      <div class="card-title">BSc. Computer Science</div>
+      <div class="card-sub">Chitwan, Nepal · Studying CS Fundamentals, data structures, algorithms &amp; software engineering</div>
+    </div>
+    <div class="about-card reveal">
+      <div class="card-year">2022 — 2023</div>
+      <div class="card-title">Open Source &amp; Personal Projects</div>
+      <div class="card-sub">Built 7+ projects — portfolio sites, REST APIs, Django apps, React dashboards</div>
+    </div>
+    <div class="about-card reveal">
+      <div class="card-year">2021</div>
+      <div class="card-title">Started Coding Journey</div>
+      <div class="card-sub">HTML &rarr; CSS &rarr; JavaScript &rarr; React &rarr; never stopped building</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="projects-header reveal">
+    <div>
+      <div class="section-label">02 — Work</div>
+      <h2 class="section-title">Selected<br>Projects</h2>
+    </div>
+    <a href="https://github.com/shirjalbaral/" target="_blank" class="btn-outline">GitHub &#8599;</a>
+  </div>
+  <div id="projects-grid">
+    <div class="loading-projects">Loading projects...</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-glow"></div>
+  <div>
+    <div class="section-label reveal">03 — Contact</div>
+    <h2 class="contact-big reveal">
+      Let's Build<br>
+      <span class="stroke">Something</span><br>
+      Amazing
+    </h2>
+    <p class="contact-sub reveal">
+      I'm always open to new projects, collaborations, and opportunities. 
+      Whether you have a project in mind or just want to say hi — my inbox is always open.
+    </p>
+    <div class="contact-info-item reveal">
+      <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+      <div><a href="mailto:baralshrijal73@gmail.com">baralshrijal73@gmail.com</a></div>
+    </div>
+    <div class="contact-info-item reveal">
+      <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+      <div><a href="https://www.google.com/maps/place/Chitwan,+Nepal" target="_blank">Chitwan, Bagmati, Nepal</a></div>
+    </div>
+    <div class="contact-info-item reveal">
+      <div class="icon"><i class="fa-brands fa-linkedin-in"></i></div>
+      <div><a href="https://www.linkedin.com/in/astra-cyber/" target="_blank">linkedin.com/in/shrijanbaral</a></div>
+    </div>
+    <div class="contact-info-item reveal">
+      <div class="icon"><i class="fa-brands fa-github"></i></div>
+      <div><a href="https://github.com/shirjalbaral/" target="_blank">github.com/shirjalbaral</a></div>
+    </div>
+    <div style="margin-top: 32px;" class="reveal">
+      <a href="shirjan_baral_cv.pdf" download="Shirjan_Baral_CV.pdf" class="btn-primary">Download CV &darr;</a>
+    </div>
+  </div>
+
+  <div class="contact-form reveal">
+    <div class="section-label" style="margin-bottom: 24px;">Send me a message</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" id="form-name" placeholder="Shrijan Baral" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="form-email" placeholder="you@example.com" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Subject</label>
+        <input type="text" id="form-subject" placeholder="Let's work together!">
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea id="form-message" placeholder="Tell me about your project..." required></textarea>
+      </div>
+      <button type="submit" class="btn-primary" id="submit-btn" style="width: 100%; justify-content: center;">
+        Send Message &rarr;
+      </button>
+      <div class="form-status" id="form-status"></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Shirjan Baral. Designed &amp; Built with &hearts; in Nepal</p>
+  <div class="social-row">
+    <a href="https://github.com/shirjalbaral/" class="soc" target="_blank"><i class="fa-brands fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/astra-cyber/" class="soc" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a href="https://x.com/Crijal_73" class="soc" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="https://www.facebook.com/shirjanbaral/" class="soc" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
