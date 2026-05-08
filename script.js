@@ -88,6 +88,10 @@ document.querySelectorAll('a,button,input,textarea,.about-card,.project-card,.sk
   let t = 0;
   let mouse = { x: 0, y: 0 };
 
+  // ── Load profile photo ──────────────────────────────────────────────────
+  const profileImg = new Image();
+  profileImg.src = 'my_image.jpg';
+
   document.addEventListener('mousemove', e => {
     mouse.x = (e.clientX / innerWidth - 0.5) * 0.5;
     mouse.y = (e.clientY / innerHeight - 0.5) * 0.5;
@@ -132,7 +136,7 @@ document.querySelectorAll('a,button,input,textarea,.about-card,.project-card,.sk
         const tilt = 0.3 + mouse.y * 0.2;
         const x = cx + Math.cos(angle) * orb.radius;
         const y = cy + Math.sin(angle) * orb.radius * tilt;
-        const depth = (Math.sin(angle) + 1) / 2; // 0 to 1 for depth
+        const depth = (Math.sin(angle) + 1) / 2;
         const alpha = 0.3 + depth * 0.7;
         const size = orb.size * (0.5 + depth * 0.8);
 
@@ -165,6 +169,55 @@ document.querySelectorAll('a,button,input,textarea,.about-card,.project-card,.sk
       ctx.lineWidth = 1;
       ctx.stroke();
     }
+
+    // ── PROFILE PHOTO — drawn last so it sits on top of everything ────────
+    const photoRadius = 130;
+    const floatY = Math.sin(t * 0.4) * 7; // gentle vertical bob
+
+    // Outer purple glow behind the photo circle
+    const photoGlow = ctx.createRadialGradient(cx, cy + floatY, photoRadius - 10, cx, cy + floatY, photoRadius + 35);
+    photoGlow.addColorStop(0, 'rgba(108,99,255,0.5)');
+    photoGlow.addColorStop(0.4, 'rgba(108,99,255,0.15)');
+    photoGlow.addColorStop(1, 'transparent');
+    ctx.fillStyle = photoGlow;
+    ctx.beginPath();
+    ctx.arc(cx, cy + floatY, photoRadius + 35, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Clip canvas to circle and draw photo
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(cx, cy + floatY, photoRadius, 0, Math.PI * 2);
+    ctx.clip();
+
+    if (profileImg.complete && profileImg.naturalWidth > 0) {
+      // Cover-fit: centre the image inside the circle
+      const imgW = profileImg.naturalWidth;
+      const imgH = profileImg.naturalHeight;
+      const diameter = photoRadius * 2;
+      const scale = Math.max(diameter / imgW, diameter / imgH);
+      const drawW = imgW * scale;
+      const drawH = imgH * scale;
+      const drawX = cx - drawW / 2;
+      const drawY = cy + floatY - drawH / 2;
+      ctx.drawImage(profileImg, drawX, drawY, drawW, drawH);
+    } else {
+      // Dark placeholder while image loads
+      ctx.fillStyle = 'rgba(13,13,24,0.95)';
+      ctx.fillRect(cx - photoRadius, cy + floatY - photoRadius, photoRadius * 2, photoRadius * 2);
+    }
+    ctx.restore();
+
+    // Crisp glowing border ring drawn on top of the photo
+    ctx.beginPath();
+    ctx.arc(cx, cy + floatY, photoRadius, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(108,99,255,0.8)';
+    ctx.lineWidth = 2.5;
+    ctx.shadowColor = 'rgba(108,99,255,0.7)';
+    ctx.shadowBlur = 20;
+    ctx.stroke();
+    ctx.shadowBlur = 0;
+    // ── end profile photo ─────────────────────────────────────────────────
 
     requestAnimationFrame(draw);
   }
@@ -249,7 +302,6 @@ async function loadProjects() {
     });
   } catch(e) {
     grid.innerHTML = '<div class="loading-projects">Could not load projects. Make sure server is running.</div>';
-    // Fallback static projects
     renderStaticProjects();
   }
 }
