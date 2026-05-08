@@ -266,7 +266,7 @@ function renderStaticProjects() {
     const card=document.createElement('div');
     card.className=`project-card${i===0?' featured':''} reveal`;
     const cid=`proj-fb-${i}`;
-    card.innerHTML=`<div class="proj-num">0${i+1}</div><div class="proj-preview"><canvas id="${cid}"></canvas><div class="proj-overlay"></div></div><div class="proj-body"><div class="proj-tags">${proj.tags.map(t=>`<span class="proj-tag">${t}</span>`).join('')}</div><div class="proj-title">${proj.title}</div><p class="proj-desc">${proj.description}</p><span class="proj-link" style="opacity:0.4">Add your live link →</span></div>`;
+    card.innerHTML=`<div class="proj-num">0${i+1}</div><div class="proj-preview"><canvas id="${cid}"></canvas><div class="proj-overlay"></div></div><div class="proj-body"><div class="proj-tags">${proj.tags.map(t=>`<span class="proj-tag">${t}</span>`).join('')}</div><div class="proj-title">${proj.title}</div><p class="proj-desc">${proj.description}</p><span class="proj-link" style="opacity:0.4"> →</span></div>`;
     grid.appendChild(card);
     setTimeout(()=>makeCanvas(cid,proj.color,COLORS[(i+1)%3]),200);
     observer.observe(card);
